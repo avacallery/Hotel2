@@ -2,35 +2,34 @@ package com.avacallery;
 
 import java.util.Random;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 
 public class Room {
     Scanner scanner = new Scanner(System.in);
-
-    private int number = 5;
-    private String type;
+    private String roomType;
     private boolean isOccupied;
 
-    public Room() {
-        this.number = number;
-        this.type = type;
-        this.isOccupied = false;
+    public Room(
+            String roomType,
+            boolean isOccupied) {
+        this.roomType = roomType;
+        this.isOccupied = isOccupied;
     }
 
-    // I don't actually want a random room number but do not know how to make it so room number is a value between 1-5?
 
-    public void roomNumber(Random random) {
-        number = random.nextInt(number) + 1;
-    }
-
-    public int getRoomNumber() {
-        return number;
-    }
-
-    public void checkIn(int name) {
+    public void checkIn() {
         System.out.println("Enter name for reservation: ");
         String input = scanner.nextLine();
+        System.out.println("Enter room type (Standard, Premium, Deluxe): ");
+        roomType = scanner.nextLine();
+        isOccupied = true;
+        System.out.println("Thank you, " + input + ", for choosing the " + roomType + " room.");
+    }
 
+    public void checkOut() {
+        System.out.println("Thank you for choosing AVA Hotels");
+        isOccupied = false;
     }
 
 

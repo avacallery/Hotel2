@@ -3,7 +3,10 @@ package com.avacallery;
 public class Main {
 
     public static void main(String[] args) {
-	Hotel myHotel = new Hotel(5);
+	Room standardRoom = new Room("Standard", false);
+	Room deluxeRoom = new Room("Deluxe", false);
+	Room premiumRoom = new Room("Premium", false);
 
+	standardRoom.checkIn();
     }
 }
